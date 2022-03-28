@@ -18,7 +18,6 @@ public class Role implements Serializable {
     @Basic(optional = false)
     @Column(name = "role_id")
     private int id;
-    
 
     @Column(name = "role_name")
     private String name;

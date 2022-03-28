@@ -44,7 +44,7 @@
                         </tbody>
                     </table>
                     </table>
-                <h2>Add user</h2>
+                <h2>Add a user</h2>
                 <form action="user" method="post">
                     <input type="hidden" name="action" value="add">
 
@@ -70,7 +70,7 @@
                     <button type="submit">Add</button>
                 </form>
 
-                <h2> Edit user </h2>
+                <h2> Edit a user </h2>
                 <form action="user" method="post">
                     <input type="hidden" name="action" value="edit">
 

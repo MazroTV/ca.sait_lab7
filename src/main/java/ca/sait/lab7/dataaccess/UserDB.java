@@ -73,7 +73,6 @@ public class UserDB {
         try {
             trans.begin();
             em.remove(em.merge(user));
-
             trans.commit();
             return true;
         } catch (Exception ex) {

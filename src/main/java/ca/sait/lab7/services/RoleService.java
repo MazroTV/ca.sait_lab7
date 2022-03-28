@@ -7,6 +7,7 @@ import ca.sait.lab7.models.User;
 import java.util.List;
 
 public class RoleService {
+
     private RoleDB roleDB = new RoleDB();
     
     public List<Role> getAll() throws Exception {

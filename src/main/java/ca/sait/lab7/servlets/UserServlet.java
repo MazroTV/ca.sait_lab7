@@ -29,19 +29,17 @@ public class UserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         UserService service = new UserService();
-
-
-        
-      
         
         String action = request.getParameter("action");
         if(action != null && action.equals("delete")) {
+
             try {
                 String email = request.getParameter("email");
                 boolean deleted = service.delete(email);
             } catch (Exception ex) {
                 Logger.getLogger(UserServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
+
         }
 
         try {
@@ -93,12 +91,14 @@ public class UserServlet extends HttpServlet {
 
         Role newRole = new Role(role_id, role);
         service.insert(email, true, firstName, lastName, password, newRole);
+
         } catch (Exception ex){
                 Logger.getLogger(UserServlet.class.getName()).log(Level.SEVERE, null, ex);
                 System.out.println(ex);
         }
 
         }else if (action != null && action.equals("edit")){
+
         try {
             String firstName = request.getParameter("first_name");
             String lastName = request.getParameter("last_name");
@@ -106,6 +106,7 @@ public class UserServlet extends HttpServlet {
             String password = request.getParameter("password");
             String role; 
             role_id = checkRole(request.getParameter("role"));
+
         if (role_id ==1) {
             role = "System Admin";
         }else if (role_id == 2) {
@@ -116,12 +117,14 @@ public class UserServlet extends HttpServlet {
 
         Role newRole = new Role(role_id, role);
         service.insert(email, true, firstName, lastName, password, newRole);
+
         }catch (Exception ex){
                 Logger.getLogger(UserServlet.class.getName()).log(Level.SEVERE, null, ex);
                 System.out.println(ex);
 }
 
         UserService userService = new UserService();
+
         try {
             List<User> users = userService.getAll();
 
